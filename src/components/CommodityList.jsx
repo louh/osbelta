@@ -27,7 +27,6 @@ const ITEMS = [
   'Insecticide',
   'botong',
   'unobtanium',
-  'protomolecule'
 ]
 
 function generateItems(quantity) {

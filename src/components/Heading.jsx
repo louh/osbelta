@@ -4,7 +4,7 @@ import { formatBelterFont } from '../utils'
 
 function Heading({ children }) {
   return (
-    <h1 className="text-5xl font-title text-center">
+    <h1 className="text-4xl font-title text-center">
       {formatBelterFont(children)}
     </h1>
   )

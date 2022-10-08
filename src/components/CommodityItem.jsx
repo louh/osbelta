@@ -61,7 +61,7 @@ function CommodityItem({
           } h-full flex flex-row space-x-2 justify-between`}
         >
           <div
-            className={`font-title text-2xl text-blue flex-grow overflow overflow-hidden text-clip ${
+            className={`font-title text-2xl text-blue flex-grow overflow-hidden text-clip ${
               readyPulse ? 'animate-pulse-1' : ''
             }`}
           >
