@@ -1,0 +1,104 @@
+html, body {
+  overflow: hidden;
+  margin: 0;
+}
+
+:root {
+  --color-yellow: rgb(255 210 54);
+  --color-yellow-t: rgb(255 210 54 / 50%);
+  --color-yellow-b: rgb(124 106 43); /* same as above on black, no transparency */
+  --color-blue: rgb(60 202 255);
+  --color-blue-t: rgb(60 202 255 / 50%);
+  --color-green: rgb(55 255 109);
+  --color-red: rgb(236 2 37);
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Eurostile';
+  background-color: black;
+  color: var(--color-yellow);
+}
+
+@font-face {
+  font-family: 'TransAmerica';
+  src: url('/fonts/transamerica-webfont.woff2') format('woff2'),
+       url('/fonts/transamerica-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Eurostile';
+  src: url('/fonts/eurostileltstd-demi-webfont.woff2') format('woff2'),
+       url('/fonts/eurostileltstd-demi-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-title {
+  font-family: 'TransAmerica';
+}
+
+.text-yellow, .yellow {
+  color: var(--color-yellow);
+  fill: var(--color-yellow);
+}
+
+.text-blue, .blue {
+  color: var(--color-blue);
+  fill: var(--color-blue);
+}
+
+.text-green, .green {
+  color: var(--color-green);
+  fill: var(--color-green);
+}
+
+.text-red, .red {
+  color: var(--color-red);
+  fill: var(--color-red);
+}
+
+.bg-yellow {
+  background-color: var(--color-yellow);
+}
+
+.bg-yellow-t {
+  background-color: var(--color-yellow-b);
+}
+
+.bg-blue {
+  background-color: var(--color-blue);
+}
+
+.bg-blue-t {
+  background-color: var(--color-blue-t);
+}
+
+.bg-white-t {
+  background-color: rgb(255 255 255 / 70%);
+}
+
+.border-yellow {
+  border-color: var(--color-yellow);
+}
+
+.border-yellow-t {
+  border-color: var(--color-yellow-b);
+}
+
+.border-blue {
+  border-color: var(--color-blue);
+}
+
+.text-2xs {
+  font-size: 0.5rem;
+  line-height: 1rem;
+}
+
+.animate-pulse-1 {
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
