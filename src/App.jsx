@@ -5,6 +5,16 @@ import BottomPiece from './components/BottomPiece'
 import CommodityList from './components/CommodityList'
 import './App.css'
 
+function toggleFullscreen () {
+  if (document.fullscreenEnabled) {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen()
+    } else {
+      document.exitFullscreen()
+    }
+  }
+}
+
 function App() {
   const [listIteration, setListIteration] = useState(0)
 
@@ -20,7 +30,7 @@ function App() {
 
   return (
     <div className="w-full h-full absolute top-0 left-0 p-5 overflow-hidden flex flex-row space-x-3 bg-black">
-      <SidePiece />
+      <SidePiece action={toggleFullscreen} />
       <div className="flex flex-col flex-grow space-y-2">
         <div className="flex flex-col flex-grow border border-yellow py-2 px-5 space-y-2">
           {/* <Heading>Anyalisi</Heading> */}

@@ -3,10 +3,11 @@ import SquareThing from './SquareThing'
 
 const pieces = [{ label: 'GNDN' }, { label: 'WRTHG' }]
 
-function SidePiece(props) {
+function SidePiece({ action = () => {} }) {
   const [activeThing, setActiveThing] = useState(pieces[0].label)
 
   function handleClick(label) {
+    action() // toggle fullscreen here.
     setActiveThing(label)
   }
 
