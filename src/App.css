@@ -102,3 +102,27 @@ html, body {
 .animate-pulse-1 {
   animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+.belta-title {
+  position: relative;
+}
+
+.belta-title::before {
+  content: '';
+  position: absolute;
+  border: 3px solid var(--color-yellow);
+  border-bottom: 0;
+  width: 100px;
+  left: -115px;
+  top: 1.1rem;
+}
+
+.belta-title::after {
+  content: '';
+  position: absolute;
+  border: 3px solid var(--color-yellow);
+  border-bottom: 0;
+  width: 100px;
+  right: -115px;
+  top: 1.1rem;
+}

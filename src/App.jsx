@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setListIteration((x) => x + 1)
-    }, 80000)
+    }, 10000)
 
     return () => {
       clearInterval(interval)
@@ -32,7 +32,7 @@ function App() {
     <div className="w-full h-full absolute top-0 left-0 p-5 overflow-hidden flex flex-row space-x-3 bg-black">
       <SidePiece action={toggleFullscreen} />
       <div className="flex flex-col flex-grow space-y-2">
-        <div className="flex flex-col flex-grow border border-yellow pt-2 pb-3 px-5 space-y-2">
+        <div className="flex flex-col flex-grow border border-yellow pt-2 pb-3 px-5 space-y-3">
           {/* <Heading>Anyalisi</Heading> */}
           <Heading>Xaltewe Overview</Heading>
           {/* <Heading>Showxating</Heading> */}
