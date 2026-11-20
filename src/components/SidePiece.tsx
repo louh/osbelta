@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
-import { SquareThing } from './SquareThing.jsx'
+import { SquareThing } from './SquareThing.js'
 
 const pieces = [{ label: 'GNDN' }, { label: 'WRTHG' }]
 
 export function SidePiece({ action = () => {} }) {
   const [activeThing, setActiveThing] = useState(pieces[0].label)
 
-  function handleClick(label) {
+  function handleClick(label: string) {
     action() // toggle fullscreen here.
     setActiveThing(label)
   }
@@ -20,7 +20,7 @@ export function SidePiece({ action = () => {} }) {
           label={label}
           isActive={label === activeThing}
           isNotify={false}
-          onClick={(e) => handleClick(label)}
+          onClick={() => handleClick(label)}
         />
       ))}
     </div>

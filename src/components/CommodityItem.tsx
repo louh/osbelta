@@ -1,13 +1,22 @@
 import { useState, useEffect } from 'react'
 import { ReactSVG } from 'react-svg'
 
-import { formatBelterFont } from '../utils'
+import { formatBelterFont } from '../utils/index.js'
 import leftarrow from '../assets/arrow-left.svg'
 import rightarrow from '../assets/arrow-right.svg'
 import commodityborder from '../assets/commodity-border.svg'
 
 const OFFSET_BEGIN_AT = 300
 const OFFSET_TIMING = 80
+
+interface CommodityItemProps {
+  label: string
+  show: boolean
+  offset: number
+  amount: number
+  target: number
+  pulse: boolean
+}
 
 export function CommodityItem({
   label,
@@ -16,17 +25,20 @@ export function CommodityItem({
   amount = 0,
   target = 0,
   pulse = false,
-}) {
+}: CommodityItemProps) {
   const [readyShow, setReadyShow] = useState(show)
   const [readyPulse, setReadyPulse] = useState(false)
   const delta = target - amount
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (readyShow === false) {
-        setReadyShow(true)
-      }
-    }, offset * OFFSET_TIMING + OFFSET_BEGIN_AT)
+    const timer = setTimeout(
+      () => {
+        if (readyShow === false) {
+          setReadyShow(true)
+        }
+      },
+      offset * OFFSET_TIMING + OFFSET_BEGIN_AT,
+    )
 
     return () => {
       clearTimeout(timer)
@@ -131,12 +143,3 @@ export function CommodityItem({
     </div>
   )
 }
-
-// CommodityItem.propTypes = {
-//   label: PropTypes.string,
-//   show: PropTypes.bool,
-//   offset: PropTypes.number,
-//   amount: PropTypes.number,
-//   target: PropTypes.number,
-//   pulse: PropTypes.bool,
-// }

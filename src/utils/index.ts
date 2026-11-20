@@ -1,7 +1,6 @@
 /**
  * Make letters reliably appear the way it does on the show by
  * changing the case where necessary.
- * @param {String} string
  */
 export function formatBelterFont(string = '') {
   // s -> S, g -> G, a -> A, t -> T (at least for SHOWXATING)
@@ -20,17 +19,14 @@ export function classNames(one = '', two = '') {
   return [one, two].join(' ').trim()
 }
 
-export function pickRandom (array) {
+export function pickRandom<T>(array: Array<T>) {
   return array[Math.floor(Math.random() * array.length)]
 }
 
 /**
  * from array, choose `quantity` number of items, make sure they're unique
- * @param {Array} array
- * @param {number} quantity
- * @returns array
  */
-export function pickRandomSet (origArray, quantity = 0) {
+export function pickRandomSet<T>(origArray: Array<T>, quantity = 0) {
   const array = [...origArray]
   const list = []
   for (let i = 0; i < quantity; i++) {

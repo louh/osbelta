@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
-import { Heading } from './components/Heading.jsx'
-import { SidePiece } from './components/SidePiece.jsx'
-import { BottomPiece } from './components/BottomPiece.jsx'
-import { CommodityList } from './components/CommodityList.jsx'
+import { Heading } from './components/Heading.js'
+import { SidePiece } from './components/SidePiece.js'
+import { BottomPiece } from './components/BottomPiece.js'
+import { CommodityList } from './components/CommodityList.js'
 import './App.css'
 
 function toggleFullscreen() {
@@ -16,7 +16,7 @@ function toggleFullscreen() {
   }
 }
 
-function App() {
+export function App() {
   const [listIteration, setListIteration] = useState(0)
 
   useEffect(() => {
@@ -77,5 +77,3 @@ function App() {
     </div>
   )
 }
-
-export default App

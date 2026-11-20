@@ -1,4 +1,4 @@
-export function BottomPiece(props) {
+export function BottomPiece() {
   return (
     <div className="h-6 flex flex-row justify-between space-x-2">
       <div className="flex flex-row space-x-2 leading-none text-xs text-white">

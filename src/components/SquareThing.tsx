@@ -1,9 +1,16 @@
+interface SquareThingProps {
+  label: string
+  isActive: boolean
+  isNotify: boolean
+  onClick: () => void
+}
+
 export function SquareThing({
   label = '',
   isActive = false,
   isNotify = false,
   onClick = () => {},
-}) {
+}: SquareThingProps) {
   return (
     <div className="w-10" onClick={onClick}>
       {label && (
@@ -25,10 +32,3 @@ export function SquareThing({
     </div>
   )
 }
-
-// SquareThing.propTypes = {
-//   label: PropTypes.string,
-//   isActive: PropTypes.bool,
-//   isNotify: PropTypes.bool,
-//   onClick: PropTypes.func,
-// }

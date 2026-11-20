@@ -1,9 +1,16 @@
 import { useState, useEffect } from 'react'
 import { ReactSVG } from 'react-svg'
 
-import { pickRandomSet } from '../utils'
-import { CommodityItem } from './CommodityItem.jsx'
+import { pickRandomSet } from '../utils/index.js'
+import { CommodityItem } from './CommodityItem.js'
 import downarrow from '../assets/arrow-down.svg'
+
+interface CommodityDetails {
+  label: string
+  amount: number
+  target: number
+  pulse: boolean
+}
 
 const ITEMS = [
   'Fertilizer',
@@ -30,14 +37,17 @@ const ITEMS = [
   'unobtanium',
 ]
 
-function generateItems(quantity) {
+function generateItems(quantity: number) {
   return pickRandomSet(ITEMS, quantity)
 }
 
-function generateValues(labels) {
-  return labels.map((label) => {
-    const obj = {
+function generateValues(labels: string[]): CommodityDetails[] {
+  return labels.map((label): CommodityDetails => {
+    const obj: CommodityDetails = {
       label,
+      pulse: false,
+      amount: 0,
+      target: 0,
     }
 
     // 25% chance of pulsing text
@@ -59,8 +69,8 @@ function generateValues(labels) {
   })
 }
 
-export function CommodityList(props) {
-  const [values, setValues] = useState([])
+export function CommodityList() {
+  const [values, setValues] = useState<CommodityDetails[]>([])
 
   useEffect(() => {
     // TODO: get 4 random labels too
