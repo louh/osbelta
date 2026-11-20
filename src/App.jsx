@@ -31,14 +31,14 @@ function App() {
   return (
     <div className="w-full h-full absolute top-0 left-0 p-5 overflow-hidden flex flex-row space-x-3 bg-black">
       <SidePiece action={toggleFullscreen} />
-      <div className="flex flex-col flex-grow space-y-2">
-        <div className="flex flex-col flex-grow border border-yellow pt-2 pb-3 px-5 space-y-3">
+      <div className="flex flex-col grow space-y-2">
+        <div className="flex flex-col grow border border-yellow pt-2 pb-3 px-5 space-y-3">
           {/* <Heading>Anyalisi</Heading> */}
           <Heading>Xaltewe Overview</Heading>
           {/* <Heading>Showxating</Heading> */}
           {/* <Heading>Navigeshang</Heading> */}
           {/* <Heading>Seva Fokaso</Heading> */}
-          <div className="flex flex-row flex-grow space-x-5">
+          <div className="flex flex-row grow space-x-5">
             <div className="w-2/3 h-full flex-none">{/* prevent changing width bc of content */}
               <CommodityList key={listIteration} />
             </div>

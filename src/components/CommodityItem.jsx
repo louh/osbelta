@@ -50,7 +50,7 @@ function CommodityItem({
 
   return (
     <div className="w-full h-12 space-x-4 flex flex-row">
-      <div className="h-12 flex-grow border border-yellow px-2 leading-none relative">
+      <div className="h-12 grow border border-yellow px-2 leading-none relative">
         <ReactSVG
           src={commodityborder}
           className="w-8 yellow absolute -left-1.5 -top-1.5"
@@ -61,7 +61,7 @@ function CommodityItem({
           } h-full flex flex-row space-x-2 justify-between`}
         >
           <div
-            className={`font-title text-2xl text-blue flex-grow overflow-hidden text-clip ${
+            className={`font-title text-2xl text-blue grow overflow-hidden text-clip ${
               readyPulse ? 'animate-pulse-1' : ''
             }`}
           >
@@ -123,7 +123,7 @@ function CommodityItem({
               </>
             ) : (
               // Delta = 0 or undefined
-              <div className="h-0 w-10 border border-t-1 border-b-0 border-yellow" />
+              <div className="h-0 w-10 border border-t border-b-0 border-yellow" />
             )}
           </div>
         </div>
