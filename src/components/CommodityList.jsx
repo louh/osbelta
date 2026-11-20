@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { ReactSVG } from 'react-svg'
 
 import { pickRandomSet } from '../utils'
-import CommodityItem from './CommodityItem'
+import { CommodityItem } from './CommodityItem.jsx'
 import downarrow from '../assets/arrow-down.svg'
 
 const ITEMS = [
@@ -59,7 +59,7 @@ function generateValues(labels) {
   })
 }
 
-function CommodityList(props) {
+export function CommodityList(props) {
   const [values, setValues] = useState([])
 
   useEffect(() => {
@@ -94,5 +94,3 @@ function CommodityList(props) {
     </div>
   )
 }
-
-export default CommodityList

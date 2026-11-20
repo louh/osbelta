@@ -1,6 +1,6 @@
 import { formatBelterFont } from '../utils'
 
-function Heading({ children }) {
+export function Heading({ children }) {
   return (
     <h1 className="text-4xl font-title text-center">
       <span className="belta-title">{formatBelterFont(children)}</span>
@@ -11,5 +11,3 @@ function Heading({ children }) {
 // Heading.propTypes = {
 //   children: PropTypes.string,
 // }
-
-export default Heading

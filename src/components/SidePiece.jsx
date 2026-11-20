@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import SquareThing from './SquareThing'
+
+import { SquareThing } from './SquareThing.jsx'
 
 const pieces = [{ label: 'GNDN' }, { label: 'WRTHG' }]
 
-function SidePiece({ action = () => {} }) {
+export function SidePiece({ action = () => {} }) {
   const [activeThing, setActiveThing] = useState(pieces[0].label)
 
   function handleClick(label) {
@@ -25,5 +26,3 @@ function SidePiece({ action = () => {} }) {
     </div>
   )
 }
-
-export default SidePiece

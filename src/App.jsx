@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 
-import Heading from './components/Heading'
-import SidePiece from './components/SidePiece'
-import BottomPiece from './components/BottomPiece'
-import CommodityList from './components/CommodityList'
+import { Heading } from './components/Heading.jsx'
+import { SidePiece } from './components/SidePiece.jsx'
+import { BottomPiece } from './components/BottomPiece.jsx'
+import { CommodityList } from './components/CommodityList.jsx'
 import './App.css'
 
-function toggleFullscreen () {
+function toggleFullscreen() {
   if (document.fullscreenEnabled) {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen()
@@ -40,16 +40,23 @@ function App() {
           {/* <Heading>Navigeshang</Heading> */}
           {/* <Heading>Seva Fokaso</Heading> */}
           <div className="flex flex-row grow space-x-5">
-            <div className="w-2/3 h-full flex-none">{/* prevent changing width bc of content */}
+            <div className="w-2/3 h-full flex-none">
+              {/* prevent changing width bc of content */}
               <CommodityList key={listIteration} />
             </div>
             <div className="w-1/3 h-full flex flex-col justify-between">
               <div className="space-y-2">
-                <div className="border border-blue bg-blue-t py-1 px-2 uppercase text-right">Anyalisi</div>
-                <div className="border border-blue bg-blue-t py-1 px-2 uppercase text-right">Seva Fokaso</div>
+                <div className="border border-blue bg-blue-t py-1 px-2 uppercase text-right">
+                  Anyalisi
+                </div>
+                <div className="border border-blue bg-blue-t py-1 px-2 uppercase text-right">
+                  Seva Fokaso
+                </div>
               </div>
               <div className="mx-auto">
-                <div className="text-center text-white mb-1 uppercase">depelésh</div>
+                <div className="text-center text-white mb-1 uppercase">
+                  depelésh
+                </div>
                 <div className="grid grid-cols-3 gap-3">
                   <div className="w-9 h-9 m-auto flex items-center justify-center bg-white-t"></div>
                   <div className="w-9 h-9 m-auto flex items-center justify-center bg-white-t"></div>

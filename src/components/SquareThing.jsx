@@ -1,4 +1,4 @@
-function SquareThing({
+export function SquareThing({
   label = '',
   isActive = false,
   isNotify = false,
@@ -32,5 +32,3 @@ function SquareThing({
 //   isNotify: PropTypes.bool,
 //   onClick: PropTypes.func,
 // }
-
-export default SquareThing

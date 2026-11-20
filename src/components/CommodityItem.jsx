@@ -9,7 +9,7 @@ import commodityborder from '../assets/commodity-border.svg'
 const OFFSET_BEGIN_AT = 300
 const OFFSET_TIMING = 80
 
-function CommodityItem({
+export function CommodityItem({
   label,
   show = false,
   offset = 1,
@@ -140,5 +140,3 @@ function CommodityItem({
 //   target: PropTypes.number,
 //   pulse: PropTypes.bool,
 // }
-
-export default CommodityItem
