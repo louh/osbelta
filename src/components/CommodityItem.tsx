@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
+import { useState, useEffect } from 'react'
 import { ReactSVG } from 'react-svg'
-import { formatBelterFont } from '../utils'
+
+import { formatBelterFont } from '../utils/index.js'
 import leftarrow from '../assets/arrow-left.svg'
 import rightarrow from '../assets/arrow-right.svg'
 import commodityborder from '../assets/commodity-border.svg'
@@ -9,29 +9,41 @@ import commodityborder from '../assets/commodity-border.svg'
 const OFFSET_BEGIN_AT = 300
 const OFFSET_TIMING = 80
 
-function CommodityItem({
+interface CommodityItemProps {
+  label: string
+  show: boolean
+  offset: number
+  amount: number
+  target: number
+  pulse: boolean
+}
+
+export function CommodityItem({
   label,
   show = false,
   offset = 1,
   amount = 0,
   target = 0,
   pulse = false,
-}) {
+}: CommodityItemProps) {
   const [readyShow, setReadyShow] = useState(show)
   const [readyPulse, setReadyPulse] = useState(false)
   const delta = target - amount
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (readyShow === false) {
-        setReadyShow(true)
-      }
-    }, offset * OFFSET_TIMING + OFFSET_BEGIN_AT)
+    const timer = setTimeout(
+      () => {
+        if (readyShow === false) {
+          setReadyShow(true)
+        }
+      },
+      offset * OFFSET_TIMING + OFFSET_BEGIN_AT,
+    )
 
     return () => {
       clearTimeout(timer)
     }
-  }, [offset])
+  }, [offset, readyShow])
 
   // at 3:50 of S05E02 "The Churn" pulses do not begin until after show animation
   // animation is hardcoded but it needs to wait until after all items are
@@ -46,11 +58,11 @@ function CommodityItem({
     return () => {
       clearTimeout(timer)
     }
-  }, [])
+  }, [pulse])
 
   return (
     <div className="w-full h-12 space-x-4 flex flex-row">
-      <div className="h-12 flex-grow border border-yellow px-2 leading-none relative">
+      <div className="h-12 grow border border-yellow px-2 leading-none relative">
         <ReactSVG
           src={commodityborder}
           className="w-8 yellow absolute -left-1.5 -top-1.5"
@@ -61,7 +73,7 @@ function CommodityItem({
           } h-full flex flex-row space-x-2 justify-between`}
         >
           <div
-            className={`font-title text-2xl text-blue flex-grow overflow-hidden text-clip ${
+            className={`font-title text-2xl text-blue grow overflow-hidden text-clip ${
               readyPulse ? 'animate-pulse-1' : ''
             }`}
           >
@@ -123,7 +135,7 @@ function CommodityItem({
               </>
             ) : (
               // Delta = 0 or undefined
-              <div className="h-0 w-10 border border-t-1 border-b-0 border-yellow" />
+              <div className="h-0 w-10 border border-t border-b-0 border-yellow" />
             )}
           </div>
         </div>
@@ -131,14 +143,3 @@ function CommodityItem({
     </div>
   )
 }
-
-CommodityItem.propTypes = {
-  label: PropTypes.string,
-  show: PropTypes.bool,
-  offset: PropTypes.number,
-  amount: PropTypes.number,
-  target: PropTypes.number,
-  pulse: PropTypes.bool,
-}
-
-export default CommodityItem

@@ -1,12 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+interface SquareThingProps {
+  label: string
+  isActive: boolean
+  isNotify: boolean
+  onClick: () => void
+}
 
-function SquareThing({
+export function SquareThing({
   label = '',
   isActive = false,
   isNotify = false,
   onClick = () => {},
-}) {
+}: SquareThingProps) {
   return (
     <div className="w-10" onClick={onClick}>
       {label && (
@@ -28,12 +32,3 @@ function SquareThing({
     </div>
   )
 }
-
-SquareThing.propTypes = {
-  label: PropTypes.string,
-  isActive: PropTypes.bool,
-  isNotify: PropTypes.bool,
-  onClick: PropTypes.func,
-}
-
-export default SquareThing

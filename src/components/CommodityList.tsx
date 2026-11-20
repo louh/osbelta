@@ -1,8 +1,15 @@
-import React, { useState, useEffect } from 'react'
 import { ReactSVG } from 'react-svg'
-import CommodityItem from './CommodityItem'
+
+import { pickRandomSet } from '../utils/index.js'
+import { CommodityItem } from './CommodityItem.js'
 import downarrow from '../assets/arrow-down.svg'
-import { pickRandomSet } from '../utils'
+
+interface CommodityDetails {
+  label: string
+  amount: number
+  target: number
+  pulse: boolean
+}
 
 const ITEMS = [
   'Fertilizer',
@@ -29,14 +36,17 @@ const ITEMS = [
   'unobtanium',
 ]
 
-function generateItems(quantity) {
+function generateItems(quantity: number) {
   return pickRandomSet(ITEMS, quantity)
 }
 
-function generateValues(labels) {
-  return labels.map((label) => {
-    const obj = {
+function generateValues(labels: string[]): CommodityDetails[] {
+  return labels.map((label): CommodityDetails => {
+    const obj: CommodityDetails = {
       label,
+      pulse: false,
+      amount: 0,
+      target: 0,
     }
 
     // 25% chance of pulsing text
@@ -58,18 +68,8 @@ function generateValues(labels) {
   })
 }
 
-function CommodityList(props) {
-  const [values, setValues] = useState([])
-
-  useEffect(() => {
-    // TODO: get 4 random labels too
-    setValues(generateValues(generateItems(4)))
-  }, [])
-
-  // prevent flash of layout
-  if (values.length === 0) {
-    return null
-  }
+export function CommodityList() {
+  const values = generateValues(generateItems(4))
 
   return (
     <div className="w-full h-full flex flex-col justify-between">
@@ -93,5 +93,3 @@ function CommodityList(props) {
     </div>
   )
 }
-
-export default CommodityList
