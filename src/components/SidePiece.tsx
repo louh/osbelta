@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'preact/hooks'
 
 import { SquareThing } from './SquareThing.js'
 
@@ -13,7 +13,7 @@ export function SidePiece({ action = () => {} }) {
   }
 
   return (
-    <div className="flex flex-col w-10 py-2 space-y-2 align-center items-start">
+    <div class="flex flex-col w-10 py-2 space-y-2 align-center items-start">
       {pieces.map(({ label }) => (
         <SquareThing
           key={label}

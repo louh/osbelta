@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'preact/hooks'
 import { ReactSVG } from 'react-svg'
 
 import { formatBelterFont } from '../utils/index.js'
@@ -61,81 +61,81 @@ export function CommodityItem({
   }, [pulse])
 
   return (
-    <div className="w-full h-12 space-x-4 flex flex-row">
-      <div className="h-12 grow border border-yellow px-2 leading-none relative">
+    <div class="w-full h-12 space-x-4 flex flex-row">
+      <div class="h-12 grow border border-yellow px-2 leading-none relative">
         <ReactSVG
           src={commodityborder}
-          className="w-8 yellow absolute -left-1.5 -top-1.5"
+          class="w-8 yellow absolute -left-1.5 -top-1.5"
         />
         <div
-          className={`${
+          class={`${
             readyShow ? 'opacity-100' : 'opacity-0'
           } h-full flex flex-row space-x-2 justify-between`}
         >
           <div
-            className={`font-title text-2xl text-blue grow overflow-hidden text-clip ${
+            class={`font-title text-2xl text-blue grow overflow-hidden text-clip ${
               readyPulse ? 'animate-pulse-1' : ''
             }`}
           >
             {formatBelterFont(label)}
           </div>
-          <div className="flex-none flex flex-col justify-between text-right py-1">
-            <div className="text-white">{target}kg</div>
+          <div class="flex-none flex flex-col justify-between text-right py-1">
+            <div class="text-white">{target}kg</div>
             {delta < 0 ? (
-              <div className="text-sm text-blue">
-                [<span className="text-red">{amount}</span>kg]
+              <div class="text-sm text-blue">
+                [<span class="text-red">{amount}</span>kg]
               </div>
             ) : delta > 0 ? (
-              <div className="text-sm text-blue">
-                [<span className="text-green">{amount}</span>kg]
+              <div class="text-sm text-blue">
+                [<span class="text-green">{amount}</span>kg]
               </div>
             ) : (
               // Delta = 0 or undefined
-              <div className="text-sm text-blue">
-                [<span className="text-white">{amount}</span>kg]
+              <div class="text-sm text-blue">
+                [<span class="text-white">{amount}</span>kg]
               </div>
             )}
           </div>
         </div>
       </div>
-      <div className="h-9 space-x-2 flex flex-row">
-        <div className="w-20 h-9 border border-yellow ">
+      <div class="h-9 space-x-2 flex flex-row">
+        <div class="w-20 h-9 border border-yellow ">
           <div
-            className={`${
+            class={`${
               readyShow ? 'opacity-100' : 'opacity-0'
             } h-full flex items-center justify-center`}
           >
             {delta < 0 ? (
-              <span className="text-sm text-green">{delta}kg</span>
+              <span class="text-sm text-green">{delta}kg</span>
             ) : delta > 0 ? (
-              <span className="text-sm text-red">{delta}kg</span>
+              <span class="text-sm text-red">{delta}kg</span>
             ) : (
               // Delta = 0 or undefined
-              <span className="text-sm text-white">{delta}kg</span>
+              <span class="text-sm text-white">{delta}kg</span>
             )}
           </div>
         </div>
-        <div className="w-20 h-9 border border-yellow text-yellow">
+        <div class="w-20 h-9 border border-yellow text-yellow">
           <div
-            className={`${
+            class={`${
               readyShow ? 'opacity-100' : 'opacity-0'
             } h-full flex flex-row items-center justify-center`}
           >
             {delta < 0 ? (
               <>
-                <ReactSVG src={leftarrow} className="w-2 flex items-center" />
-                <ReactSVG src={leftarrow} className="w-2 flex items-center" />
-                <ReactSVG src={leftarrow} className="w-2 flex items-center" />
+                <ReactSVG src={leftarrow} class="w-2 flex items-center" />
+                <ReactSVG src={leftarrow} class="w-2 flex items-center" />
+                <ReactSVG src={leftarrow} class="w-2 flex items-center" />
               </>
             ) : delta > 0 ? (
               <>
-                <ReactSVG src={rightarrow} className="w-2 flex items-center" />
-                <ReactSVG src={rightarrow} className="w-2 flex items-center" />
-                <ReactSVG src={rightarrow} className="w-2 flex items-center" />
+                <ReactSVG src={rightarrow} class="w-2 flex items-center" />
+                <ReactSVG src={rightarrow} class="w-2 flex items-center" />
+                <ReactSVG src={rightarrow} class="w-2 flex items-center" />
               </>
             ) : (
               // Delta = 0 or undefined
-              <div className="h-0 w-10 border border-t border-b-0 border-yellow" />
+              <div class="h-0 w-10 border border-t border-b-0 border-yellow" />
             )}
           </div>
         </div>

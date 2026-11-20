@@ -72,7 +72,7 @@ export function CommodityList() {
   const values = generateValues(generateItems(4))
 
   return (
-    <div className="w-full h-full flex flex-col justify-between">
+    <div class="w-full h-full flex flex-col justify-between">
       {values.map(({ label, amount, target, pulse }, i) => (
         <CommodityItem
           key={label}
@@ -84,10 +84,10 @@ export function CommodityList() {
           pulse={pulse}
         />
       ))}
-      <div className="w-full h-8 flex justify-center items-center text-center">
+      <div class="w-full h-8 flex justify-center items-center text-center">
         <ReactSVG
           src={downarrow}
-          className="text-yellow h-8 w-14 flex items-center"
+          class="text-yellow h-8 w-14 flex items-center"
         />
       </div>
     </div>

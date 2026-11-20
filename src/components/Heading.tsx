@@ -6,8 +6,8 @@ interface HeadingProps {
 
 export function Heading({ children }: HeadingProps) {
   return (
-    <h1 className="text-4xl font-title text-center">
-      <span className="belta-title">{formatBelterFont(children)}</span>
+    <h1 class="text-4xl font-title text-center">
+      <span class="belta-title">{formatBelterFont(children)}</span>
     </h1>
   )
 }
