@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+
 import Heading from './components/Heading'
 import SidePiece from './components/SidePiece'
 import BottomPiece from './components/BottomPiece'

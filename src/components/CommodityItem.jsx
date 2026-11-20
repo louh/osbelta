@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
+import { useState, useEffect } from 'react'
 import { ReactSVG } from 'react-svg'
+
 import { formatBelterFont } from '../utils'
 import leftarrow from '../assets/arrow-left.svg'
 import rightarrow from '../assets/arrow-right.svg'
@@ -132,13 +132,13 @@ function CommodityItem({
   )
 }
 
-CommodityItem.propTypes = {
-  label: PropTypes.string,
-  show: PropTypes.bool,
-  offset: PropTypes.number,
-  amount: PropTypes.number,
-  target: PropTypes.number,
-  pulse: PropTypes.bool,
-}
+// CommodityItem.propTypes = {
+//   label: PropTypes.string,
+//   show: PropTypes.bool,
+//   offset: PropTypes.number,
+//   amount: PropTypes.number,
+//   target: PropTypes.number,
+//   pulse: PropTypes.bool,
+// }
 
 export default CommodityItem

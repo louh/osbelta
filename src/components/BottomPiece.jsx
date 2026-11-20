@@ -1,5 +1,3 @@
-import React from 'react'
-
 function BottomPiece(props) {
   return (
     <div className="h-6 flex flex-row justify-between space-x-2">

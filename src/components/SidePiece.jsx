@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import SquareThing from './SquareThing'
 
 const pieces = [{ label: 'GNDN' }, { label: 'WRTHG' }]

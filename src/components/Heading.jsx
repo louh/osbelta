@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { formatBelterFont } from '../utils'
 
 function Heading({ children }) {
@@ -10,8 +8,8 @@ function Heading({ children }) {
   )
 }
 
-Heading.propTypes = {
-  children: PropTypes.string,
-}
+// Heading.propTypes = {
+//   children: PropTypes.string,
+// }
 
 export default Heading

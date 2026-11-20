@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { ReactSVG } from 'react-svg'
+
+import { pickRandomSet } from '../utils'
 import CommodityItem from './CommodityItem'
 import downarrow from '../assets/arrow-down.svg'
-import { pickRandomSet } from '../utils'
 
 const ITEMS = [
   'Fertilizer',

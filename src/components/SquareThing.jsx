@@ -1,6 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
 function SquareThing({
   label = '',
   isActive = false,
@@ -29,11 +26,11 @@ function SquareThing({
   )
 }
 
-SquareThing.propTypes = {
-  label: PropTypes.string,
-  isActive: PropTypes.bool,
-  isNotify: PropTypes.bool,
-  onClick: PropTypes.func,
-}
+// SquareThing.propTypes = {
+//   label: PropTypes.string,
+//   isActive: PropTypes.bool,
+//   isNotify: PropTypes.bool,
+//   onClick: PropTypes.func,
+// }
 
 export default SquareThing
