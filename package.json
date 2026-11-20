@@ -9,19 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-svg": "15.1.21"
   },
   "devDependencies": {
-    "@types/react": "18.0.38",
-    "@types/react-dom": "18.0.11",
-    "@vitejs/plugin-react": "2.1.0",
-    "autoprefixer": "10.4.27",
-    "postcss": "8.4.49",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "2.2.0",
+    "autoprefixer": "10.7.0",
+    "postcss": "8.5.33",
     "prop-types": "15.8.1",
-    "tailwindcss": "3.1.8",
-    "vite": "3.1.8"
+    "tailwindcss": "3.4.19",
+    "vite": "3.2.11"
   },
   "prettier": {
     "semi": false,
