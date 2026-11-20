@@ -43,7 +43,7 @@ export function CommodityItem({
     return () => {
       clearTimeout(timer)
     }
-  }, [offset])
+  }, [offset, readyShow])
 
   // at 3:50 of S05E02 "The Churn" pulses do not begin until after show animation
   // animation is hardcoded but it needs to wait until after all items are
@@ -58,7 +58,7 @@ export function CommodityItem({
     return () => {
       clearTimeout(timer)
     }
-  }, [])
+  }, [pulse])
 
   return (
     <div className="w-full h-12 space-x-4 flex flex-row">

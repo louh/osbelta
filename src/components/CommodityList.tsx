@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { ReactSVG } from 'react-svg'
 
 import { pickRandomSet } from '../utils/index.js'
@@ -70,17 +69,7 @@ function generateValues(labels: string[]): CommodityDetails[] {
 }
 
 export function CommodityList() {
-  const [values, setValues] = useState<CommodityDetails[]>([])
-
-  useEffect(() => {
-    // TODO: get 4 random labels too
-    setValues(generateValues(generateItems(4)))
-  }, [])
-
-  // prevent flash of layout
-  if (values.length === 0) {
-    return null
-  }
+  const values = generateValues(generateItems(4))
 
   return (
     <div className="w-full h-full flex flex-col justify-between">
